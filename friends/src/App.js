@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <header className="App-header">
        <Link to='/' className='home_button'><h1>Friends</h1></Link>
-       <Link to='/login'><button className='login_button'>Login</button></Link>
+       <Link to='/login'><button className='login_button'>Log-in</button></Link>
       </header>
 
       <Switch>
