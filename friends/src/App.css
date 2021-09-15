@@ -17,26 +17,26 @@
   color: lightslategrey;
 }
 
-.login_button {
+.cute_button {
   background-color: lightslategrey;
   color: #282c34;
   font-family: 'Raleway', sans-serif;
   height: 30px;
-  width: 100px;
+  width: 150px;
 }
 
 .home_page {
   padding: 5% 0;
 }
 
-.login_page {
+.a_page {
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 9%;
 }
 
-.login_form {
+.nice_form {
   height: 25vh;
   width: 300px;
   display: flex;

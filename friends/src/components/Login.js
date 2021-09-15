@@ -1,16 +1,20 @@
-import React, {useState, useHistory} from 'react';
+import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 import axiosWithAuth from '../tools/axiosWithAuth';
 
 const Login = () => {
     const {push} = useHistory();
-    const [credentials, setCredentials] = useState({});
+    const [credentials, setCredentials] = useState({
+        username: "",
+        password: ""
+    });
 
     const login = (event) => {
         event.preventDefault();
-        axiosWithAuth().post('login/endpoint', credentials)
+        axiosWithAuth().post("/login", credentials)
                        .then(res => {
-                           localStorage.setItem('token', res.data.token);
-                           push('/');
+                           localStorage.setItem('token', res.data.payload);
+                           push('/protected');
                        })
                        .catch(err => 
                         console.error('uh-oh, something went wrong', err))
@@ -24,8 +28,8 @@ const Login = () => {
     }
 
     return(
-        <div className='login_page'>
-          <form className='login_form'
+        <div className='a_page'>
+          <form className='nice_form'
                 onSubmit={login}>
             <label> Username: 
               <input type='text'
@@ -41,7 +45,8 @@ const Login = () => {
                      onChange={handleChange}/>
             </label>
 
-            <button type='submit'>Log-in</button>
+            <button type='submit'
+                    className='cute_button'>Log-in</button>
           </form>
 
         </div>
